@@ -1,0 +1,21 @@
+.searchBar, .btn {
+    border-width: 0px;
+}
+
+.searchBar {
+    width: 400px;
+    padding: 20px 25px;
+    border-radius: 15px 0px 0px 15px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1em;
+}
+
+.btn {
+    padding: 21px 25px;
+    background-color: #000;
+    border-radius: 0px 15px 15px 0px;
+}
+
+input:focus {
+    outline: none;
+}
