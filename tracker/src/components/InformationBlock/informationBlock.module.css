@@ -1,0 +1,43 @@
+.block {
+    width: 1200px;
+    background: #fff;
+    border-radius: 15px;
+    border: 1px solid;
+    /* height: 50%;
+    position: absolute;
+    margin-top: -45px;
+    margin-left: -650px;
+    top: 85%;
+    left: 50%; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.loading {
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.details {
+    flex: 1;
+    text-align: left;
+    padding: 10px 20px;
+    border-right: 1px solid #ccc;
+    color: #000;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.lastElem {
+    border: none;
+}
+
+h4 {
+    font-size: 14px;
+    color: #ccc;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+}
+
