@@ -14,10 +14,10 @@
     justify-content: space-between;
 }
 
-.loading {
+/* .loading {
     align-items: flex-start;
     justify-content: center;
-}
+} */
 
 .details {
     flex: 1;

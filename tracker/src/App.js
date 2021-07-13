@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import 'leaflet/dist/leaflet.css';
 import { Title } from './components/Title/title';
 import { SearchBar } from './components/SearchBar/searchBar';
 import { getIPAddress } from './api/GeoAPI';
 import { InformationBlock } from './components/InformationBlock/informationBlock';
+import { DisplayMap } from './components/Map/map';
+import ClipLoader from "react-spinners/ClipLoader";
 
 function App() {
   const [ address, setAddress ] = useState(() => '');
@@ -12,7 +15,6 @@ function App() {
 
     useEffect(() => {
       const fetchData = async () => {
-        setIsLoading(true)
         const result = await getIPAddress(address);
         setLocationData(result.data);
         setIsLoading(false);
@@ -26,11 +28,16 @@ function App() {
     <div className="App">
       <div className="img">
         <div className="flexContainer">
-          <Title />
-          <SearchBar setAddress={ setAddress }/> 
-            <InformationBlock isLoading={ isLoading } locationInfo={ locationData }/> 
-          </div>
+            <Title />
+            <SearchBar setAddress={ setAddress }/>
+            <InformationBlock isLoading={ isLoading } locationInfo={ locationData }/>
+            {
+              isLoading
+              ? <ClipLoader className="loadingSpinner"/>
+              : <DisplayMap addressData={ locationData }/>
+            }
         </div>
+      </div>
     </div>
   );
 }
