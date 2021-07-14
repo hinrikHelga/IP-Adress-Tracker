@@ -12,12 +12,15 @@ function App() {
   const [ address, setAddress ] = useState(() => '');
   const [ locationData, setLocationData ] = useState([]);
   const [ isLoading, setIsLoading ] = useState(true);
+  const [ isInitializedWithData, setIsInitializedWithData ] = useState(false);
 
     useEffect(() => {
       const fetchData = async () => {
+        setIsLoading(true);
         const result = await getIPAddress(address);
         setLocationData(result.data);
         setIsLoading(false);
+        if (!isInitializedWithData) { setIsInitializedWithData(true) }
       }
       fetchData();
     }, [address])
@@ -30,13 +33,13 @@ function App() {
         <div className="flexContainer">
             <Title />
             <SearchBar setAddress={ setAddress }/>
-            <InformationBlock isLoading={ isLoading } locationInfo={ locationData }/>
             {
-              isLoading
-              ? <ClipLoader className="loadingSpinner"/>
-              : <DisplayMap addressData={ locationData }/>
+              isInitializedWithData
+              ? <DisplayMap addressData={ locationData }/>
+              : <></>
             }
         </div>
+        <InformationBlock isLoading={ isLoading } locationInfo={ locationData }/>
       </div>
     </div>
   );

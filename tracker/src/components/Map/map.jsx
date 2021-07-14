@@ -21,14 +21,8 @@ export const DisplayMap = (props) => {
 
     function ChangeView() {
         const map = useMap();
-
         map.setView(position, 13);
-
-        var bounds = map.getBounds();
-        var southWest = bounds.getSouthWest();
-        var northEast = bounds.getNorthEast();
-        bounds = L.latLngBounds(southWest,northEast);
-        map.setMaxBounds(bounds);
+        map.setMaxBounds([[-90,-180],   [90,180]]);
 
         return null;
     }

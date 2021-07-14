@@ -1,14 +1,19 @@
 .searchBar, .btn {
-    margin: 40px 0px;
+    margin: 10px 0px 50px 0px;;
     border-width: 0px;
 }
 
 .searchBar {
-    width: 400px;
+    width: 25vw;
+    min-width: 200px;
     padding: 20px 25px;
     border-radius: 15px 0px 0px 15px;
     font-family: 'Rubik', sans-serif;
     font-size: 1em;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
 }
 
 .btn {

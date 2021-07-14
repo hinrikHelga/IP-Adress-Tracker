@@ -1,8 +1,7 @@
 .map {
-    height: 500px;
     max-height: none;
+    margin-top: 65px;
     width: 100%; 
     flex: 1 0 auto;
-    /* position: absolute; */
-  }
+}
   

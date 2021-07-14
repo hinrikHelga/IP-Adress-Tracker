@@ -8,21 +8,22 @@
 .img {
   background-image: url('./images/pattern-bg.png');
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   height: 300px;
   width: 100%;
-  position: absolute;
+  position: relative;
 }
 
 .flexContainer {
-  position: absolute;
+  position: relative;
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
-.loadingSpinner {
 
-}
