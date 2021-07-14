@@ -1,8 +1,29 @@
 .App {
-  text-align: center;
+  background-color: #fff;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+} 
+
+.img {
   background-image: url('./images/pattern-bg.png');
   background-size: cover;
-  padding: 20px 0px 150px;
-  font-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 300px;
+  width: 100%;
+  position: relative;
 }
+
+.flexContainer {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 

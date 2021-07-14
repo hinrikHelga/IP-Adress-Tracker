@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './searchBar.module.css'
 import { ReactComponent as SvgArrow } from '../../images/icon-arrow.svg';
-import { getIPAddress } from '../../api/GeoAPI';
 
-export const SearchBar = () => {
+export const SearchBar = (props) => {
+    const { setAddress } = props;
     const [searchTerm, setSearchTerm] = useState(() => '');
-    // Empty string will give the client request's public IP address.
-    const [address, setAddress] = useState(() => '');
-
-    useEffect(() => {
-        getIPAddress(address);
-    }, [address])
 
     function handleChange(event)  {
         setSearchTerm(event.target.value);
@@ -22,7 +16,7 @@ export const SearchBar = () => {
     }
 
     return (
-        <>
+        <div>
             <input
                 className={styles.searchBar}
                 placeholder={'Search for any IP address or domain'}
@@ -32,6 +26,6 @@ export const SearchBar = () => {
             <button className={styles.btn} onClick={handleClick}>
                 <SvgArrow></SvgArrow>
             </button>
-        </>
+        </div>
     );
 }
